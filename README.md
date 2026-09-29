@@ -50,3 +50,7 @@ C# records/classes, LINQ, JSON serialization, file I/O, input validation and CRU
 ## 📄 License
 
 MIT.
+
+## 🆕 Recent changes
+
+- Added a configurable low-stock report to quickly find products that need restocking.
