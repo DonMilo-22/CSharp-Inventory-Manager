@@ -13,7 +13,7 @@ void ListItems() {
 
 while (true) {
   Console.WriteLine("\nInventory Manager");
-  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n0. Exit");
+  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n6. Low-stock report\n0. Exit");
   Console.Write("> "); var choice = Console.ReadLine();
   if (choice == "0") break;
   if (choice == "1") ListItems();
@@ -39,6 +39,13 @@ while (true) {
   else if (choice == "5") {
     var units = products.Sum(p => p.Quantity); var value = products.Sum(p => p.Quantity * p.Price);
     Console.WriteLine($"Products: {products.Count} | Units: {units} | Inventory value: {value:C2}");
+  }
+  else if (choice == "6") {
+    Console.Write("Low-stock threshold: "); int.TryParse(Console.ReadLine(), out var threshold);
+    if (threshold < 0) threshold = 0;
+    var low = products.Where(p => p.Quantity <= threshold).OrderBy(p => p.Quantity).ToList();
+    if (low.Count == 0) Console.WriteLine("No low-stock products.");
+    else foreach (var p in low) Console.WriteLine($"{p.Id}: {p.Name} - {p.Quantity} unit(s)");
   }
 }
 
