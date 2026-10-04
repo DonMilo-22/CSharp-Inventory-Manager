@@ -13,7 +13,7 @@ void ListItems() {
 
 while (true) {
   Console.WriteLine("\nInventory Manager");
-  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n6. Low-stock report\n0. Exit");
+  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n6. Low-stock report\n7. Search products\n0. Exit");
   Console.Write("> "); var choice = Console.ReadLine();
   if (choice == "0") break;
   if (choice == "1") ListItems();
@@ -39,6 +39,13 @@ while (true) {
   else if (choice == "5") {
     var units = products.Sum(p => p.Quantity); var value = products.Sum(p => p.Quantity * p.Price);
     Console.WriteLine($"Products: {products.Count} | Units: {units} | Inventory value: {value:C2}");
+  }
+  else if (choice == "7") {
+    Console.Write("Search name: "); var query = Console.ReadLine()?.Trim();
+    if (string.IsNullOrWhiteSpace(query)) { Console.WriteLine("Enter a product name."); continue; }
+    var matches = products.Where(p => p.Name.Contains(query, StringComparison.OrdinalIgnoreCase)).ToList();
+    if (matches.Count == 0) Console.WriteLine("No matching products.");
+    else foreach (var p in matches) Console.WriteLine($"{p.Id}: {p.Name} - {p.Quantity} unit(s)");
   }
   else if (choice == "6") {
     Console.Write("Low-stock threshold: "); int.TryParse(Console.ReadLine(), out var threshold);
