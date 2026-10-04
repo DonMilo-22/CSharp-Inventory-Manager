@@ -53,4 +53,10 @@ MIT.
 
 ## 🆕 Recent changes
 
+### 2026-10-04
+
+- Added a case-insensitive product search option to the inventory menu.
+
+### Previous update
+
 - Added a configurable low-stock report to quickly find products that need restocking.
