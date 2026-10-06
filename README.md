@@ -53,6 +53,12 @@ MIT.
 
 ## 🆕 Recent changes
 
+### 2026-10-05
+
+- Added an `Export CSV` menu option that writes the current inventory to `inventory.csv`.
+
+### 2026-10-04
+
 ### 2026-10-04
 
 - Added a case-insensitive product search option to the inventory menu.
