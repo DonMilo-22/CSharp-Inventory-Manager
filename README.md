@@ -53,11 +53,13 @@ MIT.
 
 ## 🆕 Recent changes
 
+### 2026-10-06
+
+- Added an `Out of stock` menu option to list products with no remaining units.
+
 ### 2026-10-05
 
 - Added an `Export CSV` menu option that writes the current inventory to `inventory.csv`.
-
-### 2026-10-04
 
 ### 2026-10-04
 
