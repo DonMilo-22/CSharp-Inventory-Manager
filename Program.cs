@@ -8,7 +8,7 @@ void Save() => File.WriteAllText(file, JsonSerializer.Serialize(products, option
 void ListItems() {
   Console.WriteLine("\nID   Product                      Qty     Price");
   Console.WriteLine("------------------------------------------------");
-  foreach (var p in products) Console.WriteLine($"{p.Id,-4} {p.Name,-28} {p.Quantity,5} {p.Price,9:C2}");
+  foreach (var p in products.OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase)) Console.WriteLine($"{p.Id,-4} {p.Name,-28} {p.Quantity,5} {p.Price,9:C2}");
 }
 
 while (true) {
