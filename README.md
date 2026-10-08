@@ -53,6 +53,10 @@ MIT.
 
 ## 🆕 Recent changes
 
+### 2026-10-07
+
+- The main inventory list is now sorted alphabetically by product name.
+
 ### 2026-10-06
 
 - Added an `Out of stock` menu option to list products with no remaining units.
