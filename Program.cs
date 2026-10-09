@@ -13,7 +13,7 @@ void ListItems() {
 
 while (true) {
   Console.WriteLine("\nInventory Manager");
-  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n6. Low-stock report\n7. Search products\n8. Export CSV\n9. Out of stock\n0. Exit");
+  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n6. Low-stock report\n7. Search products\n8. Export CSV\n9. Out of stock\n10. Change price\n0. Exit");
   Console.Write("> "); var choice = Console.ReadLine();
   if (choice == "0") break;
   if (choice == "1") ListItems();
@@ -39,6 +39,13 @@ while (true) {
   else if (choice == "5") {
     var units = products.Sum(p => p.Quantity); var value = products.Sum(p => p.Quantity * p.Price);
     Console.WriteLine($"Products: {products.Count} | Units: {units} | Inventory value: {value:C2}");
+  }
+  else if (choice == "10") {
+    Console.Write("Product ID: "); int.TryParse(Console.ReadLine(), out var id);
+    var p = products.FirstOrDefault(x => x.Id == id); if (p is null) { Console.WriteLine("Not found."); continue; }
+    Console.Write("New price: "); decimal.TryParse(Console.ReadLine(), out var newPrice);
+    if (newPrice < 0) { Console.WriteLine("Invalid price."); continue; }
+    p.Price = newPrice; Save(); Console.WriteLine("Price updated.");
   }
   else if (choice == "9") {
     var empty = products.Where(p => p.Quantity == 0).ToList();
