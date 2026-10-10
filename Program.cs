@@ -38,7 +38,9 @@ while (true) {
   }
   else if (choice == "5") {
     var units = products.Sum(p => p.Quantity); var value = products.Sum(p => p.Quantity * p.Price);
-    Console.WriteLine($"Products: {products.Count} | Units: {units} | Inventory value: {value:C2}");
+    var averagePrice = products.Count == 0 ? 0 : products.Average(p => p.Price);
+    var outOfStock = products.Count(p => p.Quantity == 0);
+    Console.WriteLine($"Products: {products.Count} | Units: {units} | Value: {value:C2} | Avg price: {averagePrice:C2} | Out: {outOfStock}");
   }
   else if (choice == "10") {
     Console.Write("Product ID: "); int.TryParse(Console.ReadLine(), out var id);
