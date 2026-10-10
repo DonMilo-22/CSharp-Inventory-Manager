@@ -53,6 +53,10 @@ MIT.
 
 ## 🆕 Recent changes
 
+### 2026-10-09
+
+- Inventory summary now includes average unit price and out-of-stock product count.
+
 ### 2026-10-08
 
 - Added a menu option to update the price of an existing product.
