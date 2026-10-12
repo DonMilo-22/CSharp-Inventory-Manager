@@ -13,7 +13,7 @@ void ListItems() {
 
 while (true) {
   Console.WriteLine("\nInventory Manager");
-  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n6. Low-stock report\n7. Search products\n8. Export CSV\n9. Out of stock\n10. Change price\n0. Exit");
+  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n6. Low-stock report\n7. Search products\n8. Export CSV\n9. Out of stock\n10. Change price\n11. Rename product\n0. Exit");
   Console.Write("> "); var choice = Console.ReadLine();
   if (choice == "0") break;
   if (choice == "1") ListItems();
@@ -41,6 +41,13 @@ while (true) {
     var averagePrice = products.Count == 0 ? 0 : products.Average(p => p.Price);
     var outOfStock = products.Count(p => p.Quantity == 0);
     Console.WriteLine($"Products: {products.Count} | Units: {units} | Value: {value:C2} | Avg price: {averagePrice:C2} | Out: {outOfStock}");
+  }
+  else if (choice == "11") {
+    Console.Write("Product ID: "); int.TryParse(Console.ReadLine(), out var id);
+    var p = products.FirstOrDefault(x => x.Id == id); if (p is null) { Console.WriteLine("Not found."); continue; }
+    Console.Write("New name: "); var newName = Console.ReadLine()?.Trim();
+    if (string.IsNullOrWhiteSpace(newName)) { Console.WriteLine("Invalid name."); continue; }
+    p.Name = newName; Save(); Console.WriteLine("Product renamed.");
   }
   else if (choice == "10") {
     Console.Write("Product ID: "); int.TryParse(Console.ReadLine(), out var id);
