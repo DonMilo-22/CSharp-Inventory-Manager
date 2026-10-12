@@ -54,6 +54,10 @@ Desarrollado por [DonMilo-22](https://github.com/DonMilo-22).
 
 Licencia: MIT.
 
+## Actualización 2026-10-12
+
+- Added a menu option to rename an existing product.
+
 ## Historial
 
 Consulta [CHANGELOG.md](CHANGELOG.md) para ver las actualizaciones.
