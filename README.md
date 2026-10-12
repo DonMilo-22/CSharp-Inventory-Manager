@@ -1,82 +1,59 @@
-# 📦 C# Inventory Manager
+# C# Inventory Manager
 
-> Small JSON-backed inventory manager built with .NET.
+Gestor educativo de inventario desde terminal, desarrollado con C# y .NET 8.
 
-![C%23](https://img.shields.io/badge/C%23-.NET%208-512BD4?logo=dotnet&logoColor=white)
-![JSON](https://img.shields.io/badge/storage-JSON-yellow)
-![License](https://img.shields.io/badge/license-MIT-green)
+Conserva productos, existencias y precios en JSON local.
 
-Inventory Manager is a terminal CRUD application for products, quantities and prices. Changes are saved locally so inventory survives between runs.
+## Funciones actuales
 
-## ✨ Features
+- Crear, listar, buscar y eliminar productos.
+- Cambiar existencias y precios.
+- Listado alfabético y reportes de existencias bajas o agotadas.
+- Resumen de productos, unidades, valor, precio promedio y productos agotados.
+- Exportación CSV.
 
-- Add products
-- List inventory
-- Restock or remove units
-- Delete products
-- Inventory value calculation
-- JSON persistence
-- Input validation
+## Requisitos
 
-## 🚀 Run
+.NET 8 SDK. Usa un SDK capaz de compilar el destino `net8.0` declarado por el proyecto.
+
+## Instalación y uso
 
 ```bash
+git clone https://github.com/DonMilo-22/CSharp-Inventory-Manager.git
+cd CSharp-Inventory-Manager
 dotnet run
 ```
 
-## 🧭 Menu
+## Menú
 
-```text
-1. List products
-2. Add product
-3. Change stock
-4. Delete product
-5. Inventory summary
-0. Exit
-```
+| Opción | Acción |
+|---|---|
+| `1` | Listar productos por nombre. |
+| `2` | Agregar producto. |
+| `3` | Aumentar o reducir existencias. |
+| `4` | Eliminar por ID. |
+| `5` | Consultar resumen. |
+| `6` | Reporte de existencias menores o iguales al umbral elegido. |
+| `7` | Buscar por nombre sin distinguir mayúsculas. |
+| `8` | Exportar CSV. |
+| `9` | Mostrar productos sin existencias. |
+| `10` | Cambiar precio. |
+| `0` | Salir. |
 
-## 🗃️ Storage
+## Almacenamiento y límites
 
-The program automatically creates `inventory.json` next to the application data.
+`inventory.json` e `inventory.csv` se escriben en el directorio de trabajo, no necesariamente junto al ejecutable. Los formatos monetarios y decimales dependen de la configuración regional del proceso. El promedio del resumen es por producto, sin ponderar unidades. El borrado es inmediato; no hay papelera, cuentas, concurrencia ni sincronización. Es un proyecto educativo, no un sistema comercial de inventario.
 
-## 🧠 What it demonstrates
+## Comprobaciones
 
-C# records/classes, LINQ, JSON serialization, file I/O, input validation and CRUD operations.
+`dotnet build` comprueba la compilación. Para revisar persistencia manualmente, agrega un producto ficticio y vuelve a iniciar desde la misma carpeta.
 
-## 🛠️ Requirements
+## Autor y licencia
 
-.NET 8 SDK or newer.
+Desarrollado por [DonMilo-22](https://github.com/DonMilo-22).
 
-## 📄 License
+Licencia: MIT.
 
-MIT.
+## Historial
 
-## 🆕 Recent changes
-
-### 2026-10-09
-
-- Inventory summary now includes average unit price and out-of-stock product count.
-
-### 2026-10-08
-
-- Added a menu option to update the price of an existing product.
-
-### 2026-10-07
-
-- The main inventory list is now sorted alphabetically by product name.
-
-### 2026-10-06
-
-- Added an `Out of stock` menu option to list products with no remaining units.
-
-### 2026-10-05
-
-- Added an `Export CSV` menu option that writes the current inventory to `inventory.csv`.
-
-### 2026-10-04
-
-- Added a case-insensitive product search option to the inventory menu.
-
-### Previous update
-
-- Added a configurable low-stock report to quickly find products that need restocking.
+Consulta [CHANGELOG.md](CHANGELOG.md) para ver las actualizaciones.
