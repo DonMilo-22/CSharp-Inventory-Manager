@@ -58,6 +58,10 @@ Licencia: MIT.
 
 - Added a menu option to rename an existing product.
 
+## Actualización adicional 2026-10-12
+
+- Product creation now warns when the same product name already exists in the inventory.
+
 ## Historial
 
 Consulta [CHANGELOG.md](CHANGELOG.md) para ver las actualizaciones.
