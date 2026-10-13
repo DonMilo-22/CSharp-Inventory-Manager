@@ -22,6 +22,7 @@ while (true) {
     Console.Write("Quantity: "); int.TryParse(Console.ReadLine(), out var qty);
     Console.Write("Price: "); decimal.TryParse(Console.ReadLine(), out var price);
     if (string.IsNullOrWhiteSpace(name) || qty < 0 || price < 0) { Console.WriteLine("Invalid data."); continue; }
+    if (products.Any(p => p.Name.Equals(name, StringComparison.OrdinalIgnoreCase))) Console.WriteLine("Warning: a product with this name already exists.");
     var id = products.Count == 0 ? 1 : products.Max(p => p.Id) + 1;
     products.Add(new Product(id,name,qty,price)); Save(); Console.WriteLine("Product added.");
   }
