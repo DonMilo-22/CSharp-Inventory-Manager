@@ -65,3 +65,7 @@ Licencia: MIT.
 ## Historial
 
 Consulta [CHANGELOG.md](CHANGELOG.md) para ver las actualizaciones.
+
+## Actualización 2026-10-14
+
+- Product creation now rejects non-numeric quantity or price input instead of silently treating invalid input as zero.
