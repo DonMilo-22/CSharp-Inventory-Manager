@@ -69,3 +69,7 @@ Consulta [CHANGELOG.md](CHANGELOG.md) para ver las actualizaciones.
 ## Actualización 2026-10-14
 
 - Product creation now rejects non-numeric quantity or price input instead of silently treating invalid input as zero.
+
+## Actualización 2026-10-15
+
+- Added menu option 12, `Sort by price`, to list products from most expensive to least expensive.
