@@ -43,6 +43,9 @@ while (true) {
     var outOfStock = products.Count(p => p.Quantity == 0);
     Console.WriteLine($"Products: {products.Count} | Units: {units} | Value: {value:C2} | Avg price: {averagePrice:C2} | Out: {outOfStock}");
   }
+  else if (choice == "13") {
+    foreach (var p in products.OrderBy(p => p.Price)) Console.WriteLine($"{p.Id}: {p.Name} - {p.Price:C2}");
+  }
   else if (choice == "12") {
     foreach (var p in products.OrderByDescending(p => p.Price)) Console.WriteLine($"{p.Id}: {p.Name} - {p.Price:C2}");
   }
