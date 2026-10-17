@@ -73,3 +73,8 @@ Consulta [CHANGELOG.md](CHANGELOG.md) para ver las actualizaciones.
 ## Actualización 2026-10-15
 
 - Added menu option 12, `Sort by price`, to list products from most expensive to least expensive.
+
+
+## Actualización 2026-10-16
+
+- Added menu option 13 to sort products from the lowest price to the highest, complementing option 12.
