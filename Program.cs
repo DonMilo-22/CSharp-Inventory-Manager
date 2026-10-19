@@ -13,7 +13,7 @@ void ListItems() {
 
 while (true) {
   Console.WriteLine("\nInventory Manager");
-  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n6. Low-stock report\n7. Search products\n8. Export CSV\n9. Out of stock\n10. Change price\n11. Rename product\n12. Sort by price (high to low)\n13. Sort by price (low to high)\n0. Exit");
+  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n6. Low-stock report\n7. Search products\n8. Export CSV\n9. Out of stock\n10. Change price\n11. Rename product\n12. Sort by price (high to low)\n13. Sort by price (low to high)\n14. Stock value by product\n0. Exit");
   Console.Write("> "); var choice = Console.ReadLine();
   if (choice == "0") break;
   if (choice == "1") ListItems();
@@ -42,6 +42,15 @@ while (true) {
     var averagePrice = products.Count == 0 ? 0 : products.Average(p => p.Price);
     var outOfStock = products.Count(p => p.Quantity == 0);
     Console.WriteLine($"Products: {products.Count} | Units: {units} | Value: {value:C2} | Avg price: {averagePrice:C2} | Out: {outOfStock}");
+  }
+  else if (choice == "14") {
+    var stocked = products.Where(p => p.Quantity > 0).OrderByDescending(p => p.Quantity * p.Price).ToList();
+    if (stocked.Count == 0) Console.WriteLine("No products currently have stock.");
+    else {
+      Console.WriteLine("\\nStock value by product (highest first):");
+      foreach (var p in stocked) Console.WriteLine($"{p.Id}: {p.Name} | {p.Quantity} x {p.Price:C2} = {p.Quantity * p.Price:C2}");
+      Console.WriteLine($"Total stock value: {stocked.Sum(p => p.Quantity * p.Price):C2}");
+    }
   }
   else if (choice == "13") {
     foreach (var p in products.OrderBy(p => p.Price)) Console.WriteLine($"{p.Id}: {p.Name} - {p.Price:C2}");
