@@ -47,7 +47,7 @@ while (true) {
     var stocked = products.Where(p => p.Quantity > 0).OrderByDescending(p => p.Quantity * p.Price).ToList();
     if (stocked.Count == 0) Console.WriteLine("No products currently have stock.");
     else {
-      Console.WriteLine("\\nStock value by product (highest first):");
+      Console.WriteLine("\nStock value by product (highest first):");
       foreach (var p in stocked) Console.WriteLine($"{p.Id}: {p.Name} | {p.Quantity} x {p.Price:C2} = {p.Quantity * p.Price:C2}");
       Console.WriteLine($"Total stock value: {stocked.Sum(p => p.Quantity * p.Price):C2}");
     }
