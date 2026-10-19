@@ -78,3 +78,8 @@ Consulta [CHANGELOG.md](CHANGELOG.md) para ver las actualizaciones.
 ## Actualización 2026-10-16
 
 - Added menu option 13 to sort products from the lowest price to the highest, complementing option 12.
+
+
+## New feature: stock value by product
+
+Menu option `14` lists stocked products by total value (quantity multiplied by unit price), from highest to lowest, and prints the combined value of all current stock. Products with zero units are excluded from the per-product list.
