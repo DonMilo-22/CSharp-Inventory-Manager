@@ -1,3 +1,7 @@
+### 2026-10-18
+
+- Added menu option `14` to rank stocked products by total inventory value and show the combined stock value.
+
 # Historial de cambios
 
 Entradas originales conservadas en inglés. Las fechas corresponden al historial existente; la última entrada no tenía fecha registrada.
