@@ -1,3 +1,8 @@
+
+
+### 2026-10-19
+
+- Added `InventoryCsvExport.cs`, a reusable CSV writer with UTF-8 output and escaped field values.
 ### 2026-10-18
 
 - Added menu option `14` to rank stocked products by total inventory value and show the combined stock value.
