@@ -83,3 +83,8 @@ Consulta [CHANGELOG.md](CHANGELOG.md) para ver las actualizaciones.
 ## New feature: stock value by product
 
 Menu option `14` lists stocked products by total value (quantity multiplied by unit price), from highest to lowest, and prints the combined value of all current stock. Products with zero units are excluded from the per-product list.
+
+
+## New utility: reusable CSV export helper
+
+The optional `InventoryCsvExport.cs` helper writes rows to a UTF-8 CSV and escapes quote characters. Call `InventoryCsvExport.Export(items, "inventory.csv", item => new[] { ... })` from a C# project, providing the fields to export. It does not alter the JSON inventory file.
