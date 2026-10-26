@@ -88,3 +88,8 @@ Menu option `14` lists stocked products by total value (quantity multiplied by u
 ## New utility: reusable CSV export helper
 
 The optional `InventoryCsvExport.cs` helper writes rows to a UTF-8 CSV and escapes quote characters. Call `InventoryCsvExport.Export(items, "inventory.csv", item => new[] { ... })` from a C# project, providing the fields to export. It does not alter the JSON inventory file.
+
+
+## Actualización 2026-10-25
+
+- Added menu option 15 to list products within a minimum and maximum price, validating that the range is non-negative and ordered correctly.
