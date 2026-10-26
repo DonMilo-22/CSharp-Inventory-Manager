@@ -38,6 +38,11 @@ dotnet run
 | `8` | Exportar CSV. |
 | `9` | Mostrar productos sin existencias. |
 | `10` | Cambiar precio. |
+| `11` | Cambiar el nombre de un producto. |
+| `12` | Ordenar por precio de mayor a menor. |
+| `13` | Ordenar por precio de menor a mayor. |
+| `14` | Consultar el valor total de existencias por producto. |
+| `15` | Filtrar productos por rango mínimo y máximo de precio. |
 | `0` | Salir. |
 
 ## Almacenamiento y límites
