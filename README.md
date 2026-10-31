@@ -98,3 +98,7 @@ The optional `InventoryCsvExport.cs` helper writes rows to a UTF-8 CSV and escap
 ## Actualización 2026-10-25
 
 - Added menu option 15 to list products within a minimum and maximum price, validating that the range is non-negative and ordered correctly.
+
+## Actualización 2026-10-30
+
+- Added menu option `16` for an inventory health snapshot: stocked items, out-of-stock items, low stock (1-4 units), and total stock value.
