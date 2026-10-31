@@ -13,7 +13,7 @@ void ListItems() {
 
 while (true) {
   Console.WriteLine("\nInventory Manager");
-  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n6. Low-stock report\n7. Search products\n8. Export CSV\n9. Out of stock\n10. Change price\n11. Rename product\n12. Sort by price (high to low)\n13. Sort by price (low to high)\n14. Stock value by product\n15. Filter by price range\n0. Exit");
+  Console.WriteLine("1. List products\n2. Add product\n3. Change stock\n4. Delete product\n5. Inventory summary\n6. Low-stock report\n7. Search products\n8. Export CSV\n9. Out of stock\n10. Change price\n11. Rename product\n12. Sort by price (high to low)\n13. Sort by price (low to high)\n14. Stock value by product\n15. Filter by price range\n16. Inventory health snapshot\n0. Exit");
   Console.Write("> "); var choice = Console.ReadLine();
   if (choice == "0") break;
   if (choice == "1") ListItems();
