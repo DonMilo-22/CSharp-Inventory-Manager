@@ -43,7 +43,7 @@ while (true) {
     var outOfStock = products.Count(p => p.Quantity == 0);
     Console.WriteLine($"Products: {products.Count} | Units: {units} | Value: {value:C2} | Avg price: {averagePrice:C2} | Out: {outOfStock}");
   }
-  else if (choice == "15") {
+  else if (choice == "16") {\n    var stocked = products.Count(p => p.Quantity > 0);\n    var empty = products.Count(p => p.Quantity == 0);\n    var low = products.Count(p => p.Quantity > 0 && p.Quantity < 5);\n    var value = products.Sum(p => p.Quantity * p.Price);\n    Console.WriteLine($"Inventory health | Stocked: {stocked} | Out of stock: {empty} | Low stock (1-4): {low} | Stock value: {value:C2}");\n  }\n  else if (choice == "15") {
     Console.Write("Minimum price: ");
     if (!decimal.TryParse(Console.ReadLine(), out var minPrice) || minPrice < 0) { Console.WriteLine("Enter a valid non-negative minimum."); continue; }
     Console.Write("Maximum price: ");
