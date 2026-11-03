@@ -43,7 +43,14 @@ while (true) {
     var outOfStock = products.Count(p => p.Quantity == 0);
     Console.WriteLine($"Products: {products.Count} | Units: {units} | Value: {value:C2} | Avg price: {averagePrice:C2} | Out: {outOfStock}");
   }
-  else if (choice == "17") {\n    Console.Write("Minimum quantity: ");\n    if (!int.TryParse(Console.ReadLine(), out var minimum) || minimum < 0) { Console.WriteLine("Enter a non-negative whole number."); continue; }\n    var matches = products.Where(p => p.Quantity >= minimum).OrderBy(p => p.Quantity).ToList();\n    if (matches.Count == 0) Console.WriteLine("No products meet that stock level.");\n    else foreach (var p in matches) Console.WriteLine($"{p.Id}: {p.Name} - {p.Quantity} unit(s)");\n  }\n  else if (choice == "16") {
+  else if (choice == "17") {
+    Console.Write("Minimum quantity: ");
+    if (!int.TryParse(Console.ReadLine(), out var minimum) || minimum < 0) { Console.WriteLine("Enter a non-negative whole number."); continue; }
+    var matches = products.Where(p => p.Quantity >= minimum).OrderBy(p => p.Quantity).ToList();
+    if (matches.Count == 0) Console.WriteLine("No products meet that stock level.");
+    else foreach (var p in matches) Console.WriteLine($"{p.Id}: {p.Name} - {p.Quantity} unit(s)");
+  }
+  else if (choice == "16") {
     var stocked = products.Count(p => p.Quantity > 0);
     var empty = products.Count(p => p.Quantity == 0);
     var low = products.Count(p => p.Quantity > 0 && p.Quantity < 5);
