@@ -102,3 +102,7 @@ The optional `InventoryCsvExport.cs` helper writes rows to a UTF-8 CSV and escap
 ## Actualización 2026-10-30
 
 - Added menu option `16` for an inventory health snapshot: stocked items, out-of-stock items, low stock (1-4 units), and total stock value.
+
+## Actualización 2026-11-02
+
+- Added menu option `17` to list products with stock equal to or above a user-selected minimum quantity.
