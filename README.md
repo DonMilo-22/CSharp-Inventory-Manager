@@ -106,3 +106,7 @@ The optional `InventoryCsvExport.cs` helper writes rows to a UTF-8 CSV and escap
 ## Actualización 2026-11-02
 
 - Added menu option `17` to list products with stock equal to or above a user-selected minimum quantity.
+
+## Actualización 2026-11-04
+
+- Added menu option `18` to find products whose names start with a typed prefix, using a case-insensitive match.
